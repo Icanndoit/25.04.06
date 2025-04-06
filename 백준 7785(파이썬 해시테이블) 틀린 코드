@@ -1,0 +1,13 @@
+n = int(input())
+dic = {}
+
+for i in range(n):
+    name, state = input().split()
+    if name in dic:
+        dic[name] = state  #  키가 존재하면 키에 해당하는 값을 변경
+    else:
+        dic.setdefault(name, state)  # 키가 존재하지 않으면 데이터(key : name, value : state) 추가
+
+for i in dic:
+    if dic[i] == "enter":
+        print(i)  # 키값 출력
