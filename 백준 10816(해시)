@@ -1,0 +1,35 @@
+#include<iostream>
+#include<map>
+using namespace std;
+
+int main() {
+	map<int, int>hash;
+	int hashput, n, * arr;
+
+	cin >> hashput;
+	for (int i = 0; i < hashput; i++)
+	{
+		int data;  cin >> data;
+		if (!hash.count(data))
+			hash[data] = 1;
+		else
+			hash[data] += 1;
+	}
+
+	cin >> n;
+	arr = new int[n];
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (hash.count(arr[i]))
+			cout << hash.at(arr[i]) << " ";  // 키 arr[i]에 해당하는 값 반환
+		else
+			cout << 0 << " ";
+	}cout << "\n";
+
+
+	delete[]arr;
+	return 0;
+}
