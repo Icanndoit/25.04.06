@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<map>
+using namespace std;
+
+int main() {
+	map<string, string, greater<string>>hash;  // 내림차순 정렬
+	map<string, string>::iterator it;
+	int n;
+
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		string key, value;
+		cin >> key >> value;
+		hash[key] = value;
+	}
+	for (it = hash.begin(); it != hash.end(); it++)
+	{
+		if (it->second == "enter")
+			cout << it->first << "\n";
+	}
+
+	return 0;
+}
